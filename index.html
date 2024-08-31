@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="assets/logoidemia.png" alt="Logo" class="logo">
+    </div>
+    <div class="container">
+        <h1>Mi Checklist</h1>
+        <div class="input-group">
+            <label for="doc">Documento:</label>
+            <input type="text" id="doc" name="doc" pattern="\d*" maxlength="10" placeholder="Digite Documento">
+            <label for="office">Oficina:</label>
+            <input type="text" id="office" name="office" maxlength="3" style="text-transform: none;" placeholder="Digite Oficina">
+        </div>
+        <ul class="checklist">
+            <li>
+                <input type="checkbox" id="item1">
+                <label for="item1">Tomar datos</label>
+                <div id="item1-details" class="input-group" style="display: none;">
+                    <label for="doc-item1">Documento:</label>
+                    <input type="text" id="doc-item1" name="doc-item1" pattern="\d*" maxlength="10" placeholder="Solo números">
+                    <label for="office-item1">Oficina:</label>
+                    <input type="text" id="office-item1" name="office-item1" maxlength="3" style="text-transform: uppercase;" placeholder="Máximo 3 caracteres">
+                </div>
+            </li>
+            <li>
+                <input type="checkbox" id="item2">
+                <label for="item2">Verificar VNC (Cambiar Clave)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item3">
+                <label for="item3">Verificar si el equipo está en el dominio</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item4">
+                <label for="item4">Enviar a encuesta</label>
+            </li>
+        </ul>
+        <div class="buttons">
+            <button id="startCall">Iniciar Llamada</button>
+            <button id="completeCall">Completar Llamada</button>
+        </div>
+        <div class="timer" id="timer">00:00:00</div>
+    </div>
+    <div class="footer">
+        By Leandro G.
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalMessage">Llamada terminada en: <span id="callDuration">00:00:00</span></div>
+            <div id="documentDetails">
+                <div id="docDisplay">Documento: <span id="docValue"></span></div>
+                <div id="officeDisplay">Oficina: <span id="officeValue"></span></div>
+            </div>
+            <button id="acceptButton">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

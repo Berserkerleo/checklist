@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #430499; /* Color de fondo actualizado */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Para posicionar el logo */
+}
+
+/* Estilo para el logo */
+.logo-container {
+    position: absolute; /* Posición absoluta para que el logo esté sobre el contenido */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Asegura que el logo esté sobre el resto del contenido */
+    width: auto; /* Tamaño automático para el logo */
+    display: flex;
+    justify-content: center; /* Centra el logo horizontalmente */
+}
+
+.logo {
+    max-width: 150px; /* Tamaño máximo del logo */
+    height: auto; /* Mantiene la proporción del logo */
+    width: 100%;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Asegura que el contenedor no sea demasiado grande */
+    width: 100%;
+    max-width: 500px; /* Tamaño máximo del contenedor */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+    text-align: center; /* Centra el contenido */
+    margin-top: 80px; /* Espacio suficiente entre el logo y el contenedor */
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Lista de checklist */
+.checklist {
+    list-style: none;
+    padding: 0;
+}
+
+.checklist li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.checklist input[type="checkbox"] {
+    margin-right: 10px; /* Espacio entre el checkbox y el texto */
+}
+
+/* Grupo de entrada */
+.input-group {
+    margin-bottom: 20px; /* Espacio entre los campos editables y la lista de tareas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.input-group input[type="text"] {
+    width: 100%;
+    max-width: 250px; /* Tamaño máximo del campo de texto */
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Permite que los botones se ajusten en pantallas pequeñas */
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Temporizador */
+.timer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Ajusta el ancho del modal */
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalMessage {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.modal-content div {
+    margin: 10px 0;
+}
+
+#acceptButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#acceptButton:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Media Queries para Responsividad */
+
+/* Pantallas pequeñas */
+@media (max-width: 600px) {
+    .logo {
+        max-width: 120px; /* Tamaño más pequeño del logo para pantallas pequeñas */
+    }
+
+    .input-group input[type="text"] {
+        width: 90%; /* Ajusta el tamaño del campo de texto */
+        max-width: none; /* Elimina el tamaño máximo */
+    }
+
+    .buttons {
+        flex-direction: column; /* Botones en columna para pantallas pequeñas */
+    }
+
+    .buttons button {
+        width: 100%; /* Botones ocupan todo el ancho disponible */
+        margin-bottom: 10px; /* Espacio entre botones */
+    }
+}
+
+/* Pantallas medianas */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 150px; /* Ajusta el tamaño del logo para pantallas medianas */
+    }
+
+    .input-group input[type="text"] {
+        width: 90%; /* Ajusta el tamaño del campo de texto */
+    }
+}
